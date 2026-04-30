@@ -1,4 +1,3 @@
-const { loadedFrom } = require('./config/env');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -31,5 +30,4 @@ const io = new Server(server, { cors: { origin: '*' } });
 require('./socket')(io);
 
 connectDB().then(() => {
-  server.listen(process.env.PORT || 5000, () => console.log(`Server running (env: ${loadedFrom || 'none'})`));
 });

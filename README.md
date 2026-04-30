@@ -76,13 +76,3 @@ Full-stack collaboration platform for communities with real-time chat, discussio
 ## Notes / Extensions
 - Email verification and forgot-password flow can be added with a token collection and email provider (SendGrid/Resend).
 - Cloudinary support can replace local upload middleware with signed upload flow.
-
-### Common startup issue
-If you run backend from `backend/` and see `MongooseError: The `uri` parameter ... got "undefined"`, your `.env` is missing or in the wrong location.
-
-Fix:
-1. From project root: `cp .env.example .env`
-2. Ensure `MONGO_URI` is set to a valid MongoDB URI
-3. Restart backend: `cd backend && npm run dev`
-
-The backend now auto-loads `.env` from either `backend/.env` or project root `.env`.
